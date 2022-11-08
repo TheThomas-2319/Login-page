@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tela de login para a empresa Triasul">
+    <title>Login - Page</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <script>
+        let name = null
+        let password = null
+        function changeName(obj){
+            name = obj;
+        }
+
+        function changePass(pass){
+           password = pass;
+        }
+
+        function alertFunc(){
+            if(name === null || password === null){
+                alert("Voce precisa preencher todos os campos")
+            } else {
+                alert("Bem vindo " + name)
+            }  
+        }
+    </script>
+
+    <div style="overflow: auto" class="container">
+        <div class="logo-container">
+            <div class="text">Bem vindo</div>
+        </div>
+
+        <div class="login-container">
+            <div class="input-container">
+                <img src="./assets/buttonEmpty.png" class="input-btn">
+                <img src="./assets/iconUser.png" class="input-icon">
+                <input class="input" placeholder="Username" value="" onchange="changeName(this.value)"/>
+            </div>
+    
+            <div class="input-container">
+                <img src="./assets/buttonEmpty.png" class="input-btn">
+                <img src="./assets/iconPassword.png" class="input-icon">
+                <input class="input" placeholder="Password" type="password" value="" onchange="changePass(this.value)"/>
+            </div>
+            
+            <button class="btn-Login" type="submit" onclick="alertFunc()">
+                Login
+            </button>
+
+        </div>
+    </div>
+
+</body>
+</html>
